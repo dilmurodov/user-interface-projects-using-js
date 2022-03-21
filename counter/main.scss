@@ -1,22 +1,23 @@
-html, body{
+html,
+body {
     padding: 0;
     margin: 0;
 }
 
-*{
+* {
     list-style: none;
     text-decoration: none;
 }
 
-html{
+html {
     font-size: 25px;
 }
 
-body{
-    font-family: 'Red Hat Mono', monospace;
+body {
+    font-family: "Red Hat Mono", monospace;
 }
 
-section{
+section {
     color: white;
     background-color: #7d2ca7;
     display: flex;
@@ -24,18 +25,18 @@ section{
     justify-content: space-around;
     padding: 1rem;
     gap: 1rem;
-    &>div{
+    & > div {
         display: flex;
         flex-direction: column;
         align-items: center;
-        span{
+        span {
             font-size: 2rem;
             letter-spacing: 2px;
         }
-        .icon{
+        .icon {
             font-size: 2.8rem;
         }
-        p{
+        p {
             font-size: 1.2rem;
         }
     }
