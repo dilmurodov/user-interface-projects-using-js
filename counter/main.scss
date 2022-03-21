@@ -1,0 +1,42 @@
+html, body{
+    padding: 0;
+    margin: 0;
+}
+
+*{
+    list-style: none;
+    text-decoration: none;
+}
+
+html{
+    font-size: 25px;
+}
+
+body{
+    font-family: 'Red Hat Mono', monospace;
+}
+
+section{
+    color: white;
+    background-color: #7d2ca7;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 1rem;
+    gap: 1rem;
+    &>div{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        span{
+            font-size: 2rem;
+            letter-spacing: 2px;
+        }
+        .icon{
+            font-size: 2.8rem;
+        }
+        p{
+            font-size: 1.2rem;
+        }
+    }
+}
