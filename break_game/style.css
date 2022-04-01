@@ -1,0 +1,23 @@
+/* body {} */
+
+#canvas {
+    position: relative;
+    background-image: url('./img/bg.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.score {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-20px, -20px);
+}
+
+.score img {
+    width: 100%;
+    transform: scale(0.3);
+}
+
