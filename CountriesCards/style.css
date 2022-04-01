@@ -21,15 +21,18 @@ body {
 }
 
 .container {
+  padding: 4rem 0;
   display: flex;
-  flex-flow: column;
-  align-items: center;
+  /* flex-flow: column; */
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .countries {
   /* margin-bottom: 8rem; */
   display: flex;
-
+  flex-wrap: wrap;
+  gap: 1rem;
   font-size: 2rem;
   opacity: 0;
   transition: opacity 1s;
