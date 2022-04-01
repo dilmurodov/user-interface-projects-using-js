@@ -2,9 +2,13 @@
 
 ![Project image](./flipSectionParts/media/project-img.png)
 
+url: https://dilmurodov.github.io/user-interface-projects-using-js/flipSectionParts/index.html
+
 2. Project Countries Card
 
 ![Project image](./CountriesCards/complated_image.png)
+
+url: https://dilmurodov.github.io/user-interface-projects-using-js/CountriesCards/index.html
 
 ### Used:
 * AJAX/JS
@@ -13,5 +17,7 @@
 3. Project Breakout Game
 
 ![Project image](./break_game/complated_image.png)
+
+url: https://dilmurodov.github.io/user-interface-projects-using-js/break_game/index.html
 
 * CANVAS/JS
