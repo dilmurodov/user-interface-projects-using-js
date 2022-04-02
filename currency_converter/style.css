@@ -1,0 +1,99 @@
+body {
+    padding: 0;
+    margin: 0;
+    color: #020b2a;
+    width: 100vw;
+    height: 100vh;
+    font-family: sans-serif;
+}
+
+.container {
+    position: absolute;
+    width: 80%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: grid;
+    gap: 1rem;
+    grid-template-areas: 'a b c';
+    justify-items: center;
+    justify-content: center;
+    border: 1px solid #333;
+    padding: 2rem;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.convert img {
+    display: block;
+    max-width: 4rem;
+    max-height: 4rem;
+}
+
+.container>div:first-child {
+    grid-area: 'a';
+}
+
+.container>div:nth-child(2) {
+    grid-area: 'b';
+}
+
+.container>div:last-child {
+    grid-area: 'c';
+}
+
+.set, .get {
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 3em;
+}
+
+.set input,
+.get input {
+    font-size: 2em;
+    width: 100%;
+    padding: 0.3rem;
+    border: none;
+    border-bottom: 2px solid #020b2a;
+    outline: none;
+    overflow-y: scroll;
+}
+
+.set label,
+.get label {
+    font-size: 2em;
+}
+
+.get select,
+.set select {
+    font-size: 1.3em;
+    padding: 0.3em 1em;
+    outline: none;
+    border-radius: 0.3em;
+}
+
+@media (max-width: 650px) {
+    .container {
+        grid-template-areas:
+            'a'
+            'b'
+            'c';
+    }
+
+    .set, .get {
+        flex-direction: column;
+        width: 20rem;
+    }
+
+    .set input,
+    .set label,
+    .get input,
+    .get label {
+        font-size: 1.4rem;
+    }
+
+    .set select,
+    .get select {
+        font-size: 1rem;
+    }
+}
