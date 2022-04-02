@@ -22,14 +22,15 @@ class Converter {
 
   fromCurr(curr) {
     this.#fromCurr = curr.target.value;
+    
     this._getRequest();
     this._getNameCountry();
   }
 
   toCurr(curr) {
+    this.#toCurr = curr.target.value;
     this._getNameCountry();
     this._getRequest();
-    this.#toCurr = curr.target.value;
   }
 
   _getRequest() {
@@ -42,7 +43,6 @@ class Converter {
       }
     )
       .then((response) => {
-        console.log("sds");
         return response.json();
       })
       .then((dataJson) => {
@@ -62,14 +62,14 @@ class Converter {
       ).then((response) => {
           return response.json();
         }).then((data) => {
-          console.log(data[0]);
+        //   console.log(data[0]);
           labelName1.textContent = data[0].name + ` (${data[0].currencies[0].symbol})`
       }).then(() => {
         return fetch(`https://restcountries.com/v2/currency/${this.#toCurr.toLocaleLowerCase()}`)
       }).then((response) => {
           return response.json();
       }).then((data) => {
-        console.log(data[0]);
+        // console.log(data[0]);
         labelName2.textContent = data[0].name + ` (${data[0].currencies[0].symbol})`
     })
   }
