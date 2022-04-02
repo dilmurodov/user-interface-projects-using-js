@@ -14,18 +14,14 @@ body {
   color: #555;
   background-color: #f7f7f7;
   min-height: 100vh;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .container {
   padding: 4rem 0;
   display: flex;
   /* flex-flow: column; */
-  gap: 2rem;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .countries {
@@ -34,8 +30,9 @@ body {
   flex-wrap: wrap;
   gap: 1rem;
   font-size: 2rem;
-  opacity: 0;
+  opacity: 1;
   transition: opacity 1s;
+  justify-content: space-between;
 }
 
 .country {
@@ -46,6 +43,7 @@ body {
   border-radius: 0.7rem;
   margin: 0 3rem;
   /* overflow: hidden; */
+  border: 1px solid rgb(204, 196, 196);
 }
 
 .neighbour::before {
@@ -53,7 +51,6 @@ body {
   width: 100%;
   position: absolute;
   top: -4rem;
-
   text-align: center;
   font-size: 1.8rem;
   font-weight: 600;
@@ -126,4 +123,39 @@ body {
   margin: 2rem;
   border: 3rem solid white;
   box-shadow: 0 2rem 5rem 1rem rgba(0, 0, 0, 0.1);
+}
+
+.search__input {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 3rem;
+}
+
+.search__input input {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1rem 0.2rem;
+  border: 0.2rem solid rgb(56, 53, 53);
+  font-size: 1.6rem;
+  border-radius: 5px;
+  width: 30rem;
+}
+
+.btn {
+  width: 11rem !important;
+  cursor: pointer;
+  box-shadow: 5px 5px;
+}
+.btn:active{
+  top: 70%;
+  left: 51%;
+  box-shadow: 0 0;
+}
+
+.countries h1{
+  text-align: center;
+  font-size: 3rem;
 }
