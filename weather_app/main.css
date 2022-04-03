@@ -1,0 +1,134 @@
+:root {
+  --grey-text: #bfc1c8;
+  --white-text: #fff;
+  --top-background: #2d303d;
+  --blue-color: #009ad8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  letter-spacing: 1px;
+  text-decoration: none;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #1e202b;
+  font-family: sans-serif;
+}
+
+.main {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.card {
+  border-radius: 0.7rem;
+  overflow: hidden;
+  background-color: #323544;
+}
+
+.card__top {
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  color: var(--grey-text);
+  background-color: var(--top-background);
+  margin-bottom: 1rem;
+}
+
+.card__body {
+  padding: 2rem;
+}
+
+.card__body .name__country {
+  font-size: 1.6rem;
+  color: #bfc1c8;
+  text-align: left;
+  margin-bottom: 1rem;
+}
+
+.card__body .current__celsiues {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.card__body .current__celsiues img {
+  height: 4.5rem;
+  width: 4.5rem;
+}
+
+.card__body .current__celsiues h1 {
+  font-size: 4rem;
+  color: var(--white-text);
+}
+
+.card__body .details {
+  font-size: 1rem;
+  color: var(--grey-text);
+  display: flex;
+  gap: 1.6rem;
+}
+
+.card__body .details > span {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header {
+  margin: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.header .search {
+  background-color: var(--top-background);
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5rem;
+}
+
+.header .search__input {
+  padding: 0.7rem 0;
+  padding-left: 0.9rem;
+  font-size: 1.2rem;
+  background: none;
+  outline: none;
+  color: var(--grey-text);
+  border: none;
+}
+
+.header .search__btn {
+  padding: 0.7rem 1.4rem;
+  border-radius: 40px;
+  color: var(--white-text);
+  background-color: var(--blue-color);
+  font-size: 1rem;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.header .search__btn:active {
+  background-color: var(--white-text);
+  color: var(--blue-color);
+}
+
+@media (max-width: 650px) {
+  .search {
+    width: 333.7px !important;
+  }
+  .main {
+    justify-content: center;
+  }
+}

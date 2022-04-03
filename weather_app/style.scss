@@ -1,0 +1,118 @@
+:root {
+    --grey-text: #bfc1c8;
+    --white-text: #fff;
+    --top-background: #2d303d;
+    --blue-color: #009ad8;
+}
+* {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    letter-spacing: 1px;
+    text-decoration: none;
+}
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #1e202b;
+    font-family: sans-serif;
+}
+.main {
+    margin: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+.card {
+    border-radius: 0.7rem;
+    overflow: hidden;
+    background-color: #323544;
+    &__top {
+        padding: 2rem;
+        display: flex;
+        justify-content: space-between;
+        color: var(--grey-text);
+        background-color: var(--top-background);
+        margin-bottom: 1rem;
+    }
+    &__body {
+        padding: 2rem;
+        .name__country {
+            font-size: 1.6rem;
+            color: #bfc1c8;
+            text-align: left;
+            margin-bottom: 1rem;
+        }
+        .current__celsiues {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+            img {
+                height: 4.5rem;
+                width: 4.5rem;
+            }
+            h1 {
+                font-size: 4rem;
+                color: var(--white-text);
+            }
+            margin-bottom: 3rem;
+        }
+        .details {
+            font-size: 1rem;
+            color: var(--grey-text);
+            display: flex;
+            gap: 1.6rem;
+            & > span {
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+        }
+    }
+}
+
+.header {
+    margin: 2rem;
+    display: flex;
+    justify-content: center;
+    .search {
+        background-color: var(--top-background);
+        overflow: hidden;
+        display: flex;
+        justify-content: space-between;
+        border-radius: 5rem;
+        &__input {
+            padding: 0.7rem 0;
+            padding-left: 0.9rem;
+            font-size: 1.2rem;
+            background: none;
+            outline: none;
+            color: var(--grey-text);
+            border: none;
+        }
+        &__btn {
+            padding: 0.7rem 1.4rem;
+            border-radius: 40px;
+            color: var(--white-text);
+            background-color: var(--blue-color);
+            font-size: 1rem;
+            outline: none;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            &:active {
+                background-color: var(--white-text);
+                color: var(--blue-color);
+            }
+        }
+    }
+}
+
+@media (max-width: 650px) {
+    .search {
+        width: 333.7px !important;
+    }
+    .main {
+        justify-content: center;
+    }
+}
