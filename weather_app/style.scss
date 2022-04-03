@@ -36,7 +36,12 @@ body {
         margin-bottom: 1rem;
     }
     &__body {
-        padding: 2rem;
+        padding: 1rem 2rem 2rem;
+        .weather__text {
+            margin-bottom: 1rem;
+            color: var(--white-text);
+            font-size: 0.7rem !important;
+        }
         .name__country {
             font-size: 1.6rem;
             color: #bfc1c8;
@@ -55,7 +60,7 @@ body {
                 font-size: 4rem;
                 color: var(--white-text);
             }
-            margin-bottom: 3rem;
+            margin-bottom: 0.7rem;
         }
         .details {
             font-size: 1rem;

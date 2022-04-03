@@ -43,7 +43,13 @@ body {
 }
 
 .card__body {
-  padding: 2rem;
+  padding: 1rem 2rem 2rem;
+}
+
+.card__body .weather__text {
+  margin-bottom: 1rem;
+  color: var(--white-text);
+  font-size: 0.7rem !important;
 }
 
 .card__body .name__country {
@@ -57,7 +63,7 @@ body {
   display: flex;
   align-items: center;
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 0.7rem;
 }
 
 .card__body .current__celsiues img {
