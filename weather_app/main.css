@@ -31,7 +31,7 @@ body {
 }
 
 .loader {
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   left: 50%;
   top: 50%;

@@ -39,7 +39,22 @@ class Weather {
   constructor() {
     searchBtn.addEventListener("click", this._searchRequest.bind(this));
   }
-
+  _getLocation(){
+      if(navigator.geolocation){
+          fetch('https://ipgeolocation.abstractapi.com/v1/?api_key=90ab8ef8b0a44687a3dce2a6e784804a', 
+          {
+              method: 'GET',
+          }).then((response) => {
+              return response.json();
+          }).then(jsonData => {
+              this.#location = `${jsonData.city}`
+             
+              this._getRequest()
+          })
+      } else {
+          alert('Geolocation is not supported by this browser.Please update your browser!😢')
+      }
+  }
   get key() {
     return this.#key;
   }
@@ -108,8 +123,6 @@ class Weather {
   _getRequest() {
     let place = null;
     let wind_dir = null;
-    mainContainer.style.opacity = 0;
-    loader.style.opacity = 1;
     fetch(this.url)
       .then((response) => {
         console.log("sdsd");
@@ -148,10 +161,14 @@ class Weather {
             wind_dir
           );
         });
-      }).then(() => {
+      }).catch((err) => {
+          alert(new Error('Bundey joy nomi aniqlanmadi!'))
+      })
+      .finally((err) => {
           mainContainer.style.opacity = 1;
           loader.style.opacity = 0;
       })
   }
 }
 let weather = new Weather();
+weather._getLocation();
