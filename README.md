@@ -21,3 +21,14 @@ url: https://dilmurodov.github.io/user-interface-projects-using-js/CountriesCard
 url: https://dilmurodov.github.io/user-interface-projects-using-js/break_game/index.html
 
 * CANVAS/JS
+
+4. Project Weather App
+
+![Project image](./weather_app/img/project_image.jpg)
+![Project image](./weather_app/img/project_image_2.png)
+
+* Fetch API
+* Error Hendling
+* Working with Loader
+* Request/Response
+* Responsive
