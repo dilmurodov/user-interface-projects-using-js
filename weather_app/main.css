@@ -14,6 +14,7 @@
 }
 
 body {
+  position: relative;
   padding: 0;
   margin: 0;
   background-color: #1e202b;
@@ -25,6 +26,19 @@ body {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.loader {
+  opacity: 0;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, 50%);
+  width: 20rem;
+  height: 15rem;
+  transition: opacity 0.3s ease;
 }
 
 .card {
