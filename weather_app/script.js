@@ -165,8 +165,8 @@ class Weather {
           alert(new Error('Bundey joy nomi aniqlanmadi!'))
       })
       .finally((err) => {
-          mainContainer.style.opacity = 1;
           loader.style.opacity = 0;
+          mainContainer.style.opacity = 1;
       })
   }
 }
