@@ -113,11 +113,13 @@ body {
         width: 333.7px !important;
     }
     .search {
+        border-radius: 10px !important;
         &__input {
-            width: 75%;
+            width: 70%;
         }
         &__btn {
-            width: 25%;
+            border-radius: 10px !important;
+            width: 30%;
         }
     }
     .main {

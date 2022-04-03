@@ -128,11 +128,15 @@ body {
   .search {
     width: 333.7px !important;
   }
+  .search {
+    border-radius: 10px !important;
+  }
   .search__input {
-    width: 75%;
+    width: 70%;
   }
   .search__btn {
-    width: 25%;
+    border-radius: 10px !important;
+    width: 30%;
   }
   .main {
     justify-content: center;
