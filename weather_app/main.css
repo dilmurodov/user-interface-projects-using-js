@@ -132,11 +132,11 @@ body {
     border-radius: 10px !important;
   }
   .search__input {
-    width: 70%;
+    width: 75%;
   }
   .search__btn {
     border-radius: 10px !important;
-    width: 30%;
+    width: 25%;
   }
   .main {
     justify-content: center;
