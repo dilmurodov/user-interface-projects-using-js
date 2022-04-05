@@ -4,7 +4,7 @@ const userInput = document.querySelector(".user__input");
 const head = document.querySelector(".head");
 let findUser = async function (url) {
   try {
-    let a = await fetch(url);
+    let a = await fetch(url, {method: 'GET'});
     if (!a.ok) {
       throw new Error(`Bundey user tolpilmadi ${a.status} ${a.statusText}`);
     }
@@ -68,7 +68,7 @@ let findUser = async function (url) {
 };
 const addRepo = async function (url) {
   try {
-    let a = await fetch(url);
+    let a = await fetch(url, {method: 'GET'});
     if (!a.ok) {
       throw new Error(`Bundey user Topilmadi ${a.status} ${a.statusText}`);
     }
