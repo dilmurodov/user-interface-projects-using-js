@@ -31,4 +31,13 @@ url: https://dilmurodov.github.io/user-interface-projects-using-js/break_game/in
 * Error Hendling
 * Working with Loader
 * Request/Response
+* Responsive 
+
+5. Project Github Profile
+
+![Project iamge](./github__profile__pr/media/complated.png)
+
+* Fetch API
+* Async/await
+* Promise
 * Responsive
