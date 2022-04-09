@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" translate="no">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Qiroat</title>
+   <meta name="title" content="Qiroat.uz">
+   <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon" />
+   <link rel="stylesheet" href="./assets/css/main.css" type="text/css" media="all" />
+   <link href="https://cdn.jsdelivr.net/gh/hung1001/font-awesome-pro@4cac1a6/css/all.css" rel="stylesheet"
+      type="text/css" />
+</head>
+
+<body>
+   <nav class="navigation shadow">
+      <div class="container">
+         <ul class="flex between align-center main-nav">
+            <li class="menu toggle"><i class="far fa-bars"></i></li>
+            <li class="logo">Qiroat</li>
+            <li class="theme-toggle">
+               <label for="check-toggle" class="far fa-moon toggle"></label>
+               <input type="checkbox" class="check-toggle" id="check-toggle" onchange="setTheme(this)">
+            </li>
+         </ul>
+      </div>
+      <aside class="sidebar fixed-set">
+         <div class="container">
+            <ul>
+               <li class="menu-text">Menu</li>
+               <li>
+                  <a href="#" class="link">Al Qur'an</a>
+               </li>
+               <li>
+                  <a href="#doa-harian" class="link">Doa-Doa Harian</a>
+               </li>
+               <li>
+                  <a href="#adzan" class="link">Waktu Sholat</a>
+               </li>
+               <li>
+                  <a href="#asmaul-husna" class="link">Asmaul Husna</a>
+               </li>
+               <li>
+                  <a href="#niat-sholat" class="link">Niat-Niat Sholat</a>
+               </li>
+            </ul>
+            <footer>&copy; 2021 <span>Mohamad Adithya</span></footer>
+         </div>
+      </aside>
+   </nav>
+   <section class="surahs padding-set">
+      <div class="container responsive">
+         <!-- <a href="#${e[a].name.transliteration.id.toLowerCase()}" class="surah flex shadow">
+            <p class="number">1</p>
+            <div>
+               <h3 class="name">Al-Fatiha</h3>
+               <p class="desc text-gray">The Opener • 7 ayat</p>
+            </div>
+         </a> -->
+      </div>
+   </section>
+   <section class="surah-page page fixed-set padding-set">
+      <div class="container">
+         <h1 class="bismillah arab">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيْم</h1>
+         <div class="verses">
+            <!-- <ul class="verse"><li class="arab">${e.verses[a].text.arab}</li><li class="latin">${e.verses[a].number.inSurah}. ${e.verses[a].text.transliteration.en}</li><li class="means text-gray">${e.verses[a].translation.id}</li><li class="far fa-play toggle" onclick="toggleAudio(this)" data-audio="${e.verses[a].audio.primary}"></li> </ul> -->
+         </div>
+      </div>
+   </section>
+   <section class="adzan-page page fixed-set padding-set">
+      <div class="container">
+         <header class="shadow">
+            <p class="text-gray location"></p>
+            <h2 class="name"></h2>
+            <div class="flex align-center">
+               <i class="far fa-none fa-fw time-icon"></i>
+               <span>
+                  <p class="time"></p>
+                  <p class="date text-gray"></p>
+               </span>
+            </div>
+         </header>
+         <div class="time-list">
+         </div>
+      </div>
+   </section>
+   <section class="daily-prayer-page page fixed-set padding-set">
+      <div class="container responsive">
+      </div>
+   </section>
+   <section class="asmaul-husna-page page fixed-set padding-set">
+      <div class="container responsive">
+      </div>
+   </section>
+   <section class="prayer-intentions-page page fixed-set padding-set">
+      <div class="container responsive">
+      </div>
+   </section>
+   <div class="loader">
+      <div class="lds-ripple">
+         <div></div>
+         <div></div>
+      </div>
+   </div>
+   <section class="offline fixed-set">
+      <div class="container">
+         <h1 class="copy">You're Offline</h1>
+         <p>Sorry, your network is unavailable. Check your data or wifi connection to access this app.</p>
+      </div>
+   </section>
+   <audio class="audio"></audio>
+   <script src="./assets/js/app.js" type="text/javascript" charset="utf-8"></script>
+</body>
+
+</html>
