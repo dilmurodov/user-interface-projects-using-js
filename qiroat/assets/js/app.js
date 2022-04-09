@@ -56,7 +56,7 @@ surahsContainer.addEventListener("click", (e) => {
 (async function getSurahs() {
   let ls = localStorage.getItem("surahs");
   if (!JSON.parse(ls)) {
-    const s = await fetch("http://api.alquran.cloud/v1/meta");
+    const s = await fetch({method: 'GET'}, "http://api.alquran.cloud/v1/meta");
     const j = await s.json();
     const d = j.data.surahs;
     parseSurahs(d);
