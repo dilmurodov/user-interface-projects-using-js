@@ -6,6 +6,8 @@ const surahsContainer = document.querySelector(".surahs .container");
 const dailyPrayerContainer = document.querySelector(
   ".daily-prayer-page .container"
 );
+const icon = document.querySelector('.theme-toggle .far.fa-moon.toggle');
+const check = document.querySelector('.theme-toggle .check-toggle');
 const timeListContainer = document.querySelector(".time-list");
 const versesContainer = document.querySelector(".verses");
 const asmaulHusnaContainer = document.querySelector(
@@ -38,7 +40,16 @@ const setTheme = (el) => {
     localStorage.setItem("theme", "light");
   }
 };
-setTheme(checkToggle);
+
+document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
+
+let theme = localStorage.getItem("theme");
+console.log(theme);
+console.log(icon);
+if (theme == 'dark'){
+  icon.classList.replace("fa-moon", "fa-sun");
+  check.checked = true;
+} 
 
 surahsContainer.addEventListener("click", (e) => {
   let parent = e.target.closest(".surah");
@@ -56,7 +67,8 @@ surahsContainer.addEventListener("click", (e) => {
 (async function getSurahs() {
   let ls = localStorage.getItem("surahs");
   if (!JSON.parse(ls)) {
-    const s = await fetch({method: 'GET'}, "http://api.alquran.cloud/v1/meta");
+    
+    const s = await fetch("https://api.alquran.cloud/v1/meta");
     const j = await s.json();
     const d = j.data.surahs;
     parseSurahs(d);
