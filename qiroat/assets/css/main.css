@@ -24,9 +24,11 @@
   font-family: 'Poppins-Regular', sans-serif;
   --semiBoldFont: 'Poppins-SemiBold', sans-serif;
   --bodyColor: hsl(0, 0%, 100%);
-  --accentColor: hsl(210, 10%, 23%);
+  /* --accentColor: hsl(210, 10%, 23%); */
+  --accentColor: #208B3A;
   --cardColor: hsl(0, 0%, 100%);
-  --textGray: gray;
+  /* --textGray: gray; */
+  --textGray: hsl(135, 63%, 74%);
   --textcolor: var(--accentColor);
   --loaderColor: var(--accentColor);
   --borderColor: hsl(240, 11%, 96%);
@@ -35,12 +37,14 @@
 
 [data-theme="dark"] {
   --semiBoldFont: 'Poppins-SemiBold', sans-serif;
-  --bodyColor: hsl(210, 10%, 23%);
-  --cardColor: hsl(212, 7%, 40%);
+  --bodyColor: #155D27;
+  /* --cardColor: hsl(212, 7%, 40%); */
+  --cardColor: #1A7431;
   --textGray: hsl(0, 0%, 87%);
   --textcolor: hsl(0, 0%, 100%);
   --loaderColor: hsl(0, 0%, 100%);
-  --borderColor: gray;
+  /* --borderColor: gray; */
+  --borderColor: hsl(135, 63%, 74%);
 }
 
 * {
@@ -84,7 +88,7 @@ body {
 }
 
 .navigation .sidebar {
-  
+
   background-color: var(--accentColor);
   width: 60%;
   z-index: -2;
@@ -480,4 +484,3 @@ body {
 .fs-medium {
   font-size: 1.6rem;
 }
-

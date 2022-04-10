@@ -45,8 +45,8 @@ const setTheme = (el) => {
 document.documentElement.setAttribute("data-theme", localStorage.getItem("theme"));
 
 let theme = localStorage.getItem("theme");
-console.log(theme);
-console.log(icon);
+// console.log(theme);
+// console.log(icon);
 if (theme == 'dark'){
   icon.classList.replace("fa-moon", "fa-sun");
   check.checked = true;
@@ -189,7 +189,7 @@ function toggleAudios(e){
 
 let numAyats;
 
-async function audios(n){
+async function audios(n, e){
   audiosHTML.innerHTML = "";
   let resp = await fetch(`https://api.quran.sutanlab.id/surah/${n}`)
   let respJs = await resp.json()
@@ -205,12 +205,17 @@ async function audios(n){
         audiosHTML.children[i+1].load();
         audiosHTML.children[i+2].load();
         audiosHTML.children[i+3].load();
+        // console.log(i, "tugadi");
       }
-      audiosHTML.children[i+1].play();
+      if(i+1 < verses.length){
+        audiosHTML.children[i+1].play();
+      } else {
+        e.classList.replace("fa-stop", "fa-play");
+      }
       resume = i+1;
     }
     a.setAttribute("id", i);
-    console.log(a);
+    // console.log(a);
     audiosHTML.append(a);
   }
   audiosHTML.children[0].play();
@@ -237,7 +242,7 @@ function iconChange(e){
 
 async function AllAudios(e){
   document.querySelectorAll(".min").forEach(item => item.classList.replace("fa-stop", "fa-play"));
-  
+  audioEl.pause();
   iconChange(e);
 
   if(e.classList.contains("loaded")) {
@@ -250,7 +255,7 @@ async function AllAudios(e){
   loader.classList.toggle("active");
   let n = e.getAttribute("data-audio");
   e.classList.add("loaded");
-  audios(n);
+  audios(n, e);
   loader.classList.toggle("active")
 
   // loader
