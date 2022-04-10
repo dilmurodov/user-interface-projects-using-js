@@ -26,6 +26,7 @@ const checkToggle = document.querySelector(".check-toggle");
 const pages = document.querySelectorAll(".page");
 // const surahPage = pages[0];
 const surahPage = document.querySelector(".surah-page");
+const audiosHTML = document.querySelector(".audios");
 const setTheme = (el) => {
   const toggleIcon = el.previousElementSibling;
   if (el.checked) {
@@ -186,51 +187,107 @@ function toggleAudios(e){
   e.classList.contains("play") ? e.classList.replace("fa-play", "fa-stop") : e.classList.replace("fa-stop", "fa-play")
 }
 
-async function AllAudios(e){
+let numAyats;
 
-  let n = e.getAttribute("data-audio");
-  // loader
-
-  loader.classList.toggle("active");
-  
-  // fetch
-  
+async function audios(n){
+  audiosHTML.innerHTML = "";
   let resp = await fetch(`https://api.quran.sutanlab.id/surah/${n}`)
   let respJs = await resp.json()
-  let respVer = respJs.data.verses;
-  let i = 0;
+  let verses = respJs.data.verses;
+  numAyats = verses.length;
 
-  return (function (){
-    document.querySelectorAll(".min").forEach(item => item.classList.replace("fa-stop", "fa-play"));
-    if (!e.classList.contains("play")){
-      e.classList.toggle("play");
-      e.classList.replace("fa-play", "fa-stop");
-      audioEl.src = respVer[i].audio.primary;
-      audioEl.play();
-      // request geted
-
-      loader.classList.remove("active")
-      
-      // do loader unvisible
-
-      audioEl.onended = (ad) => {
-        if (i < respVer.length){
-          audioEl.src = respVer[++i].audio.primary;
-          audioEl.play();
-        } else {
-          
-          e.classList.toggle("play");
-          e.classList.replace("fa-stop", "fa-play");
-          audioEl.pause();
-      };
+  for(let i = 0; i < verses.length; i++){
+    let a = document.createElement("audio")
+    a.src = verses[i].audio.primary;
+    
+    a.onended = function() {
+      if (i+3 < verses.length){
+        audiosHTML.children[i+1].load();
+        audiosHTML.children[i+2].load();
+        audiosHTML.children[i+3].load();
       }
-    } else{
-      loader.classList.remove("active")
-      audioEl.pause();
-      e.classList.toggle("play");
-      console.log("stop");
-      e.classList.replace("fa-stop", "fa-play");
+      audiosHTML.children[i+1].play();
+      resume = i+1;
     }
-  })();
- 
+    a.setAttribute("id", i);
+    console.log(a);
+    audiosHTML.append(a);
+  }
+  audiosHTML.children[0].play();
+
+}
+
+let a= new Audio();
+
+function playStop(e){  
+    for(let i = 0; i < numAyats; i++){
+      audiosHTML.children[i].pause();
+    }
+}
+
+function iconChange(e){
+  e.classList.toggle("play");
+  if(e.classList.contains("play")){
+    e.classList.replace("fa-play", "fa-stop");
+  } else {
+    playStop(e);
+    e.classList.replace("fa-stop", "fa-play");
+  }
+}
+
+async function AllAudios(e){
+  document.querySelectorAll(".min").forEach(item => item.classList.replace("fa-stop", "fa-play"));
+  
+  iconChange(e);
+
+  if(e.classList.contains("loaded")) {
+    if (e.classList.contains("play")){
+      audiosHTML.children[0].play();
+    }
+    return;
+  };
+  
+  loader.classList.toggle("active");
+  let n = e.getAttribute("data-audio");
+  e.classList.add("loaded");
+  audios(n);
+  loader.classList.toggle("active")
+
+  // loader
+
+  // fetch
+  // let i = 0;
+
+  // return (function (){
+  //   document.querySelectorAll(".min").forEach(item => item.classList.replace("fa-stop", "fa-play"));
+  //   if (!e.classList.contains("play")){
+  //     e.classList.toggle("play");
+  //     e.classList.replace("fa-play", "fa-stop");
+  //     audioEl.src = respVer[i].audio.primary;
+  //     audioEl.play();
+  //     // request geted
+
+  //     loader.classList.remove("active")
+      
+  //     // do loader unvisible
+
+  //     audioEl.onended = (ad) => {
+  //       if (i < respVer.length){
+  //         audioEl.src = respVer[++i].audio.primary;
+  //         audioEl.play();
+  //       } else {
+          
+  //         e.classList.toggle("play");
+  //         e.classList.replace("fa-stop", "fa-play");
+  //         audioEl.pause();
+  //     };
+  //     }
+  //   } else{
+  //     loader.classList.remove("active")
+  //     audioEl.pause();
+  //     e.classList.toggle("play");
+  //     console.log("stop");
+  //     e.classList.replace("fa-stop", "fa-play");
+  //   }
+  // })();
 }
